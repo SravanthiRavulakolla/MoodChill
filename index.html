@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood-Based Playlist Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation bar with mood dropdown -->
+    <div class="navbar">
+        <h1>Chilling Mood Playlist</h1>
+        <p>Hello! How's your mood today?</p>
+        <form id="moodForm">
+            <label for="mood">Choose Your Mood:</label>
+            <select id="mood" name="mood">
+                <option value="happy">Happy</option>
+                <option value="sad">Sad</option>
+                <option value="energetic">Energetic</option>
+                <option value="relaxed">Relaxed</option>
+                <option value="enthusiastic">Enthusiastic</option>
+                <option value="boring">Boring</option>
+            </select>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <!-- Main content area -->
+    <div class="container">
+        <!-- Playlist display -->
+        <div id="playlist">
+            <!-- Example Song -->
+            <!-- Repeat this block for each song -->
+            <div class="song">
+                <img src="./images/inkem inkem poster.jpg" alt="Song Poster" class="poster">
+                <div class="song-details">
+                    <p class="movie-name">Geetha Govindam</p>
+                    <p class="song-title">Inkem inkem inkem kavale</p>
+                    <p class="singers">Singers</p>
+                    <audio class="audio-player" controls>
+                        <source src="song1.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
+            <!-- Add more songs as needed -->
+        </div>
+    </div>
+
+    <!-- JavaScript to handle form submission -->
+    <script>
+        document.getElementById('moodForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var selectedMood = document.getElementById('mood').value;
+            var playlistDiv = document.getElementById('playlist');
+            playlistDiv.innerHTML = "Fetching playlist for your mood: " + selectedMood;
+            
+            // Example: Adding songs dynamically (you would replace this with your own logic)
+            playlistDiv.innerHTML += `
+                <div class="song">
+                    <img src="poster1.jpg" alt="Song Poster" class="poster">
+                    <div class="song-details">
+                        <p class="movie-name">Movie Name</p>
+                        <p class="song-title">Song Title</p>
+                        <p class="singers">Singers</p>
+                        <audio class="audio-player" controls>
+                            <source src="song1.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>
