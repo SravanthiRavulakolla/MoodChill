@@ -1,35 +1,34 @@
+/* General reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body styles */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #d4ebe3;
 }
 
+/* Navbar styles */
 .navbar {
     background-color: #8a7084;
     color: rgb(241, 238, 151);
     padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    text-align: center;
 }
 
-.navbar h1 {
+.navbar h1, .navbar p {
     margin: 0;
-}
-
-.navbar p {
-    margin: 0;
+    padding-bottom: 10px;
 }
 
 form {
     display: flex;
     align-items: center;
+    justify-content: center;
+    margin-top: 10px;
     gap: 10px;
 }
 
@@ -38,43 +37,83 @@ label {
     color: white;
 }
 
-select {
-    padding: 5px;
+select, button {
+    padding: 8px;
     font-size: 16px;
+    border-radius: 5px;
+    border: none;
 }
 
 button {
-    padding: 5px 10px;
-    background-color: white;
-    color: #4CAF50;
-    border: none;
-    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
     cursor: pointer;
-    font-size: 16px;
 }
 
 button:hover {
     background-color: #45a049;
-    color: white;
 }
 
+/* Container to hold playlist */
 .container {
-    text-align: center;
     background-color: white;
     padding: 20px;
     margin: 20px auto;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    width: 400px;
+    max-width: 1000px;
 }
 
-h1 {
+/* Song block style */
+.song {
+    display: flex;
+    align-items: center;
     margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Poster image styling */
+.poster {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+/* Song details styling */
+.song-details {
+    flex: 1;
+}
+
+.song-details p {
+    margin: 5px 0;
+    font-size: 18px;
     color: #333;
 }
 
-#playlist {
-    margin-top: 20px;
-    font-size: 18px;
-    color: #555;
+/* Audio player */
+.audio-player {
+    margin-top: 10px;
+    width: 100%;
+}
+
+/* For small screens */
+@media (max-width: 768px) {
+    .song {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .poster {
+        margin-bottom: 15px;
+    }
+
+    .song-details {
+        text-align: center;
+    }
 }
